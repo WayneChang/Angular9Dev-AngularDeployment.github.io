@@ -1,0 +1,41 @@
+    <!-- Header START -->
+    <header class="header">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav ">
+              <li><a href="http://blog.miniasp.com/">首頁</a></li>
+              <li><a href="http://blog.miniasp.com/archive.aspx">文章彙整</a></li>
+              <li><a href="http://blog.miniasp.com/contact.aspx">與我聯絡</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://blog.miniasp.com/Account/login.aspx">登入</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="title-wrapper">
+        <div class="container" (mouseover)="showIcon=true" (mouseleave)="showIcon=false">
+
+          <img [src]="imgsrc" [attr.myname]="sitename" [title]="sitename" class="pull-left logo" (click)="changeTitle($event)">
+
+          <div class="pull-left">
+          <h1 [style.font-size.px]="fontSize" (wheel)="changeSize($event)"><a href="http://blog.miniasp.com/">{{sitename}}</a></h1>
+          <!-- <h1 [ngStyle]="{'font-siez': fontSize + 'px'}" (Wheel)="changeSize($event)"><a href="http://blog.miniasp.com/">{{sitename}}</a></h1> -->
+            <h3 [class.highlight]="fontSize % 2 == 0" [innerHTML]="subtitle"></h3>
+            <!-- <h3 [ngClass]="{'highlight': fontSize % 2 == 0}" [innerHTML]="subtitle"></h3> -->
+          </div>
+          <app-social-icons *ngIf="showIcon"></app-social-icons>
+
+        </div>
+      </div>
+    </header>
+    <!-- Header END -->
